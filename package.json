@@ -1,5 +1,17 @@
 {
+  "name": "user-admin",
+  "version": "1.0.0",
+  "main": "server.js",
+  "test": "mocha",
+  "repository": "git@github.com:tindy360/user-admin.git",
+  "author": "tindy360 <tindy360@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0"
   }
 }
