@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy: sheltered-scrubland-86750
+  provider: heroku
+  api_key:
+    secure: YYqHMbC+4R64HMuQ8dzkDGQckVAVkhPQubw8/ARmUpvbUFjY9mVg7P2jZs56qxrnpiT+Tz2rxEllnwcInwNEdnvzVNJtE7GSZ4tlzZB8GMP21auOCgmbCpEBb76DLh986Pyhy1RXOeLFSvMFmPE8DplToFdUG44gorkT1y20sPvecABOMbENuCKSZTuCUzO7co2aCFMrNqr+58NWMTMk0h9MntnAMDEIe7JE9DBLZQRCk3pi56mr14b/NZ6OtVcDB5/+dBeUUfsUhf303EbpbvrQYBeX1hxPSFVrsPc4ecbwXC4Mz7DAO059A3TvAfhKvOhWiN5T7NJUjpKS+fOod/ePzQZeD0JmeHDlZd63SqrC42ut7HnXjTvHYR5MIXsDmoJ8RujCQ5IbVlXrWUvMLEgAFd4rQtGoKMxkaESHHmOIafhkPYNkvJn/dbdd6BiQBFemfdhnaERH9o+S8mTeLz7InKWMjcMnUuPDI95sWt/kCD1SEKe58f/krgPKFDzSPJS1GbDNgf2ZyCAthCp1DVjY11jBswBrbpsfj1c85cVrUZ2pdxP/QJzjiPZHrsjeBXNnFpW+DGS/N+eQ5lkq2nF+YaJpeOizKa7lxiF6JTXgA/d87R4bYmvs2DHsnZoLS1bJK69KqWh41adXMro1kbM5BL4/DwQqXhkEVu0Xefw=
+  app: user-admin
+  on:
+    repo: tindy360/user-admin
