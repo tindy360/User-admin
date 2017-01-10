@@ -1,0 +1,15 @@
+header {
+
+}
+.wrapper {
+  height: 500px;
+  width: 500px;
+}
+
+.background {
+  background-color: #c0c3c6;
+}
+
+#lirstName {
+  padding-top: 10px;
+}
