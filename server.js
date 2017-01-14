@@ -26,9 +26,7 @@ app.post('/users', (err, req, res)=>{
 
 app.post('/delete', (err, req, res) => {
   //check through db for entry return error if missing
-  const dbCheck(){
-    if (true) {
-
+  const dbCheck()
     }
   }
 

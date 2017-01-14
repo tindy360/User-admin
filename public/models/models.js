@@ -6,3 +6,5 @@ const userSchema = new Schema({
   last name: String
   email: String
 })
+
+module.exports = mongoose.model
