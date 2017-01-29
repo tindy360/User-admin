@@ -2,46 +2,37 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
-mongoose.Promise = global.Promise,
+mongoose.Promise = global.Promise;
+const User = require('./models/users');
 //const {PORT, DATABASE_URL} = require('module');
 
-
+//connect db
 mongoose.connect('mongodb://localhost/userdb/users')
 
 app.use(express.static(__dirname + '/public'));
-
+//get requests to root url will load app
 app.get('/', (req, res)=> {
     res.send('index');
 });
-
+//get requets to
 app.get('/users', (req, res)=>{
   send
 });
 
 app.post('/users/add', (err, req, res)=>{
-//  if error, {
-  //  throw error
-
-  //else {
-    const newUser = {
-      userName: req.body.userName
-      password: req.body.password
-      email: req.body.email
-    //}
-    console.log('user added')
-  }
-  }
+  const user = new User();
+  user.userName = req.body.username;
+  user.email = req.body.email;
+  user.passwrd = req.body.password;
 
 
 });
 
 app.post('/delete', (err, req, res) => {
   //check through db for entry return error if missing
-  const dbCheck()
-    }
-  }
+  //const dbCheck()
 
-})
+});
 
 app.listen(process.env.PORT || 8080, function() {
 console.log('running on 8080')
