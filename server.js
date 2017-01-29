@@ -7,7 +7,7 @@ const User = require('./models/users');
 //const {PORT, DATABASE_URL} = require('module');
 
 //connect db
-mongoose.connect('mongodb://localhost/userdb/users')
+mongoose.connect('mongodb://localhost:27017/userdb/users')
 
 app.use(express.static(__dirname + '/public'));
 //get requests to root url will load app
@@ -16,7 +16,9 @@ app.get('/', (req, res)=> {
 });
 //get requets to
 app.get('/users', (req, res)=>{
-  send
+  res.send(
+    user.find({users})
+  )
 });
 
 app.post('/users/add', (err, req, res)=>{
@@ -25,12 +27,8 @@ app.post('/users/add', (err, req, res)=>{
   user.email = req.body.email;
   user.passwrd = req.body.password;
 
+  user.save();
 
-});
-
-app.post('/delete', (err, req, res) => {
-  //check through db for entry return error if missing
-  //const dbCheck()
 
 });
 
