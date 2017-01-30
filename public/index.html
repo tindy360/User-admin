@@ -19,18 +19,18 @@
 
       <div class="wrapper background">
         <h3>Please enter new user info.</h3>
-        
+<form class="form">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <label for="exampleInputPassword1">User Name</label>
+    <input name="userName" type="user name" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
   <div class="form-group">
-    <label for="emailAddress">email</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <label for="emailAddress">Password</label>
+    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
 
 
@@ -38,6 +38,12 @@
 </form>
 
     </div>
+    </div>
+
+    <div class="user-container hidden">
+      <ul class="userdata">
+        <p>Curent Active Users.</p>
+      </ul>
     </div>
     <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <script type="text/javascript" href="/app.js"></script>
