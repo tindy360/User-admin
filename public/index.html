@@ -19,39 +19,47 @@
         <br>
         <h2>User database interaction</h2>
 
-        <!-- Trigger/Open The Modal -->
-        <button id="myBtn">Add User</button>
+        <!-- Modal -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#formModal">Add User</button>
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
+        <!-- Modal -->
+        <div id="formModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
 
-            <!-- Modal content -->
+            <!-- Modal content-->
             <div class="modal-content">
-                <span class="close">&times;</span>
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Please Fill  in all feilds</h4>
+              </div>
+              <div class="modal-body">
 
-                <div class="wrapper" >
-                    <h3>Please enter new user info.</h3>
-                    <form class="form modal-content">
+
+                    <form class="form">
                         <div class="form-group">
                             <label >Email address</label>
-                            <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                            <input name="email" type="email" class="form-control"  placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label >User Name</label>
-                            <input name="userName" type="user name" class="form-control" id="exampleInputPassword1" placeholder="User Name">
+                            <input name="userName" type="user name" class="form-control"  placeholder="User Name">
                         </div>
                         <div class="form-group">
                             <label >Password</label>
-                            <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input name="password" type="password" class="form-control" placeholder="Password">
                         </div>
 
 
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
 
-                </div>
+
+              </div>
+              </div>
             </div>
 
+          </div>
+        </div>
 
         </div>
         <div class="user-container hidden">
@@ -61,8 +69,9 @@
         </div>
     </div>
 
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/app.js"></script>
 </body>
 

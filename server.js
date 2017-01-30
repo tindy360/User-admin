@@ -5,7 +5,8 @@ const mongoose = require('mongoose')
 mongoose.Promise = global.Promise;
 const User = require('./models/users');
 //const {PORT, DATABASE_URL} = require('module');
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 //connect db
 mongoose.connect('mongodb://localhost:27017/userdb/users')
 
@@ -16,14 +17,19 @@ app.get('/', (req, res)=> {
 });
 //get requets to
 app.get('/users', (req, res)=>{
-  res.send(
-    user.find({users})
-  )
+  User.find({}, (err, user)=> {
+    if(err) {
+      res.send(err)
+    }
+    res.json(user)
+    console.log(user)
+  })
 });
 
-app.post('/users/add', (err, req, res)=>{
+app.post('/users/add', (req, res)=>{
+  console.log(req.body)
   const user = new User();
-  user.userName = req.body.username;
+  user.userName = req.body.userName;
   user.email = req.body.email;
   user.passwrd = req.body.password;
 
