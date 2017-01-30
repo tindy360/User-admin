@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-  <!--normalize css  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
-  <!-- bring in local style rules -->
-  <link rel="stylesheet" href="/main.css">
-  <!-- import bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--normalize css  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <!-- bring in local style rules -->
+    <link rel="stylesheet" href="/main.css">
+    <!-- import bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
     <title>User Admin</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container">
-      <hr>
+        <br>
+        <h2>User database interaction</h2>
 
-      <div class="wrapper background">
-        <h3>Please enter new user info.</h3>
-<form class="form">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">User Name</label>
-    <input name="userName" type="user name" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="emailAddress">Password</label>
-    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn">Add User</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <div class="wrapper" >
+                    <h3>Please enter new user info.</h3>
+                    <form class="form modal-content">
+                        <div class="form-group">
+                            <label >Email address</label>
+                            <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label >User Name</label>
+                            <input name="userName" type="user name" class="form-control" id="exampleInputPassword1" placeholder="User Name">
+                        </div>
+                        <div class="form-group">
+                            <label >Password</label>
+                            <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
 
 
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
 
+                </div>
+            </div>
+
+
+        </div>
+        <div class="user-container hidden">
+            <ul class="userdata">
+                <p>Curent Active Users.</p>
+            </ul>
+        </div>
     </div>
-    </div>
 
-    <div class="user-container hidden">
-      <ul class="userdata">
-        <p>Curent Active Users.</p>
-      </ul>
-    </div>
-    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
-    <script type="text/javascript" href="/app.js"></script>
-  </body>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/app.js"></script>
+</body>
+
 </html>
