@@ -8,3 +8,8 @@ body {
 .background {
   background-color: #c0c3c6;
 }
+
+.user-container{
+  padding-top: 200px;
+  padding-left: 50px;
+}

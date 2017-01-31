@@ -3,8 +3,7 @@ $(document).ready(function() {
 
 
     // post request
-$('.form').submit(function(event) {
-        console.log("submit hit")
+    $('.form').submit(function(event) {
         event.preventDefault();
         const email = event.target.email.value;
         const userName = event.target.userName.value;
@@ -21,13 +20,31 @@ $('.form').submit(function(event) {
             url: "/users/add",
             type: "POST",
             data: formData,
-            success: function(data, textStatus, jqXHR) {
-                //data - response from server
-            },
+            success: function(data, textStatus, jqXHR) {},
             error: function(jqXHR, textStatus, errorThrown) {
 
             }
         });
+        this.reset();
+    });
+    //get request for rendering users to DOM
+    $('#getUsers').click(function() {
+        console.log('users requested')
+        $.ajax({
+          dataType: "json",
+          url: "/users",
+          type: "GET",
+          data: {},
+          success: function(data, textStatus, jqXHR) {
+            console.log(data)
+            
+          },
+          error: function(jqXHR, textStatus, errorThrown) {}
+
+
+        })
+
     });
 
-});//close of doc ready function
+
+}); //close of doc ready function
