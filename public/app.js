@@ -28,8 +28,10 @@ $(document).ready(function() {
 
         });
         this.reset();
+        location.reload();
         $('#formModal').modal('hide');
     }); //submit closes
+
     //get request for rendering users to DOM
     function retreiveUsers() {
         $.getJSON("/users", function(users) {
@@ -41,7 +43,7 @@ $(document).ready(function() {
         console.log(users.length);
         const userCount = users.length;
         console.log(userCount);
-        $('<p>'+ userCount +'</p>').insertBefore('.data')
+        $('<p>' + userCount + '</p>').insertBefore('.data')
         $.each(users, function(i, value) {
 
             $('#userTable').append('<tr><td>' + value.userName + '</td><td>' + value.email + '</td><td>' + '<button type="submit" class="delete btn btn-sm btn-danger" data-id="' + value._id + '">delete</button>' + '</td></tr>')
@@ -50,19 +52,21 @@ $(document).ready(function() {
     }
     retreiveUsers();
 
-    $('#userTable').on('click','.delete', deleteUser);
+    $('#userTable').on('click', '.delete', deleteUser);
 
 
     function deleteUser() {
         console.log('delete')
         $.ajax({
-            url: "/users/delete/"+$(this).data('id'),
-            type: "Delete",
-            success: function(data, textStatus, jqXHR) {},
+            url: "/users/delete/" + $(this).data('id'),
+            type: "POST",
+            success: function(data, reloadWindow, jqXHR) {},
             error: function(jqXHR, textStatus, errorThrown) {}
 
-        });
-    };
+        }); //end of ajax call
+location.reload();
+
+    }; //end of deleteUser
 
 
 
