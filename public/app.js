@@ -38,7 +38,10 @@ $(document).ready(function() {
     };
 
     function renderUsers(users) {
-        console.log(users);
+        console.log(users.length);
+        const userCount = users.length;
+        console.log(userCount);
+        $('<p>'+ userCount +'</p>').insertBefore('.data')
         $.each(users, function(i, value) {
 
             $('#userTable').append('<tr><td>' + value.userName + '</td><td>' + value.email + '</td><td>' + '<button type="submit" class="delete btn btn-sm btn-danger" data-id="' + value._id + '">delete</button>' + '</td></tr>')
