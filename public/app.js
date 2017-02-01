@@ -41,17 +41,26 @@ $(document).ready(function() {
         console.log(users);
         $.each(users, function(i, value) {
 
-            $('#userTable').append('<tr><td>' + value.userName + '</td><td>' + value.email + '</td><td>' + '<button type="submit" id=delete ' + value._id + ' class="btn btn-danger btn-sm">Delete User</button>' + '</td></tr>')
-
+            $('#userTable').append('<tr><td>' + value.userName + '</td><td>' + value.email + '</td><td>' + '<button type="submit" class="delete btn btn-sm btn-danger" data-id="' + value._id + '">delete</button>' + '</td></tr>')
 
         });
     }
     retreiveUsers();
-    console.log("getting here")
-    $('#delete').submit(function(event) {
-        event.preventDefault();
-        console.log("delete", event.target.value)
-    });
+
+    $('#userTable').on('click','.delete', deleteUser);
+
+
+    function deleteUser() {
+        console.log('delete')
+        $.ajax({
+            url: "/users/delete/"+$(this).data('id'),
+            type: "Delete",
+            success: function(data, textStatus, jqXHR) {},
+            error: function(jqXHR, textStatus, errorThrown) {}
+
+        });
+    };
+
 
 
 }); //close of doc ready function
