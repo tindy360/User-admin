@@ -41,8 +41,17 @@ $(document).ready(function() {
         console.log(users);
         $.each(users, function(i, value) {
 
-            $('#userTable').append('<tr><td>' + value.userName + '</td><td>' + value.email + '</td><td>' + '<button type="button" class="btn btn-danger btn-sm">Delete User</button>' + '</td></tr>')
+            $('#userTable').append('<tr><td>' + value.userName + '</td><td>' + value.email + '</td><td>' + '<button type="submit" id=delete ' + value._id + ' class="btn btn-danger btn-sm">Delete User</button>' + '</td></tr>')
+
+
         });
     }
     retreiveUsers();
+    console.log("getting here")
+    $('#delete').submit(function(event) {
+        event.preventDefault();
+        console.log("delete", event.target.value)
+    });
+
+
 }); //close of doc ready function
